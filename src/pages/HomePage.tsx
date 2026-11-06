@@ -25,7 +25,7 @@ export default function HomePage() {
   // On a phone the map sits above the list, so bring it back into view when a card is chosen.
   const select = useCallback((id: number | null) => {
     setSelectedId(id)
-    if (id !== null && window.matchMedia('(max-width: 959px)').matches) mapRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    if (id !== null && typeof window.matchMedia === 'function' && window.matchMedia('(max-width: 959px)').matches) mapRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }, [])
 
   const all = catalogue.data ?? []
