@@ -93,8 +93,7 @@ and [Public Art – Artists](https://opendata.vancouver.ca/explore/dataset/publi
 from the City of Vancouver Open Data Portal, under the
 [Open Government Licence – Vancouver](https://opendata.vancouver.ca/pages/licence/).
 The API carries no photographs; each artwork page links to the City's own
-registry entry, which does. Map tiles by [CARTO](https://carto.com/attributions)
-over [OpenStreetMap](https://www.openstreetmap.org/copyright) data.
+registry entry, which does. Map tiles by [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors.
 
 ## License
 

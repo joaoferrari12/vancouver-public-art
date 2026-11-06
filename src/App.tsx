@@ -29,7 +29,7 @@ export default function App() {
         </Routes>
       </main>
       <footer className="footer small muted">
-        Data: City of Vancouver Open Data (Open Government Licence – Vancouver). Map tiles: OpenStreetMap contributors, CARTO.
+        Data: City of Vancouver Open Data (Open Government Licence – Vancouver). Map tiles: OpenStreetMap contributors.
       </footer>
     </div>
   )

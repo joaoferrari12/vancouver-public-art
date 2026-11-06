@@ -85,10 +85,10 @@ export default function ArtMap({ artworks, selectedId, onSelect, here, fit = tru
       aria-label="Map of Vancouver public art"
       renderer={L.canvas({ padding: 0.5 })}
     >
+      {/* CARTO's free basemaps started asking for a key in 2026; OpenStreetMap's own tiles need none for light use. */}
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
-        url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-        subdomains="abcd"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
         maxZoom={19}
       />
       <Resize />

@@ -45,7 +45,7 @@ async function stub(page) {
     const body = url.includes('/exports/json') ? catalogue : url.includes('public-art-artists') ? artists : artwork
     return route.fulfill({ status: 200, contentType: 'application/json', body })
   })
-  await page.route('https://*.basemaps.cartocdn.com/**', route => route.fulfill({ status: 200, contentType: 'image/png', body: TILE }))
+  await page.route('https://tile.openstreetmap.org/**', route => route.fulfill({ status: 200, contentType: 'image/png', body: TILE }))
 }
 
 async function axe(page, label, report) {
