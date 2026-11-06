@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Type-check
+        run: npx tsc -b
+      - name: Unit and component tests
+        run: npx vitest run
+      - name: Production build
+        run: npx vite build
+      - name: Install Chromium for the accessibility walk
+        run: npx playwright install --with-deps chromium
+      - name: Accessibility and end-to-end walk (axe-core, phone and desktop)
+        run: node scripts/a11y.mjs
